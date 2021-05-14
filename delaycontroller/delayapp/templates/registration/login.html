@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>delay controller</title>
+</head>
+
+<body>
+  <h2>Delay Controller</h2>
+  <h3>Login</h3>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>delay controller</title>
+</head>
+
+<body>
+  <h2>Delay Controller</h2>
+  <ul>
+
+  	   <li>Add Delay: Input Delay vm and Delay time and click 'Add'</li>
+       <li>Remove Delay: Input Delay vm click 'Remove'</li>
+       <li>Check the current added delay: Input Delay vm click 'Check'</li>
+
+  </ul>
+  <div>
+  <form action='/delayapp/' method="post">
+    {% csrf_token %}
+    {{ form }}ms
+    <input type="submit" name="action" value="Add">
+    <input type="submit" name="action" value="Remove">
+    <input type="submit" name="action" value="Check">
+    <button onclick="location.href='{% url 'logout' %}'" type="button">Logout</button>
+  </form>
+  <br>
+  </div>
+
+{% if messages %}
+<ul>
+   {% for message in messages %}
+	   <li>{{ message }}</li>
+   {% endfor %}
+</ul>
+{% endif %}
+</body>
+
+</html>
